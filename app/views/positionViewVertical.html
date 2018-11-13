@@ -1,0 +1,18 @@
+<!-- Location Control -->
+<div class="form-group" ng-if="vm.showLocation">
+	<div class="row">
+		<label>{{ vm.locationLabel }}</label>
+  	<div  class="view-mode" ng-bind="vm.location"></div>
+	</div>
+</div>
+
+<div class="form-group">
+	<div class="row">
+		<label ng-if="vm.positionLabel != null">{{ vm.positionLabel }}</label>
+		<position-value class="view-mode"
+			latitude = "{{vm.getLatitude()}}"
+			longitude = "{{vm.getLongitude()}}"
+			>
+		</position-value>
+	</div>
+</div>

@@ -1,0 +1,45 @@
+<div class="field-functions-menu navbar-right" ng-class="{'dropdown': !vm.dropUp, 'dropup': vm.dropUp}">
+	<a class="dropdown-toggle" data-target="#" data-toggle="dropdown" role="button" style="color:white;">&hellip;</a>
+	<ul class="dropdown-menu" role="menu">
+		<!--<li class="dropdown-submenu">
+			<a tabindex="-1"><span data-i18n="common.coordinate-format">Coordinate Format</span></a>
+		  	<ul class="dropdown-menu submenu-box">
+			   <li><a ng-click="vm.changeCoordinateType('DDM');" tabindex="-1"><span data-i18n="common.ddm">DDM</span><span ng-if="vm.coordType == 'DDM'" class="glyphicon glyphicon-ok" style="margin-left:10px;"></span></a></li>
+			   <li><a ng-click="vm.changeCoordinateType('DMS');" tabindex="-1"><span data-i18n="common.dms">DMS</span><span ng-if="vm.coordType == 'DMS'" class="glyphicon glyphicon-ok" style="margin-left:10px;"></span></a></li>
+			   <li><a ng-click="vm.changeCoordinateType('DD');" tabindex="-1"><span data-i18n="common.dd">DD</span><span ng-if="vm.coordType == 'DD'" class="glyphicon glyphicon-ok" style="margin-left:10px;"></span></a></li>
+		  	</ul>
+		</li>-->
+		<span class="dropdown-header" data-i18n="common.coordinate-format" style="text-decoration: underline; font-weight: bold; color: black; font-size: 16px;">Coordinate Format</span>
+		<li><a class="dropdown-item" ng-click="vm.changeCoordinateType('DDM');" tabindex="-1"><span ng-if="vm.coordType == 'DDM'" class="glyphicon glyphicon-ok"></span><span ng-if="vm.coordType != 'DDM'" class="glyphicon glyphicon-ok" style="color: transparent;"></span><span data-i18n="common.ddm" style="padding-left:20px;">DDM</span></a></li>
+		<li><a class="dropdown-item" ng-click="vm.changeCoordinateType('DMS');" tabindex="-1"><span ng-if="vm.coordType == 'DMS'" class="glyphicon glyphicon-ok"></span><span ng-if="vm.coordType != 'DMS'" class="glyphicon glyphicon-ok" style="color: transparent;"></span><span data-i18n="common.dms" style="padding-left:20px;">DMS</span></a></li>
+		<li><a class="dropdown-item" ng-click="vm.changeCoordinateType('DD');" tabindex="-1"><span ng-if="vm.coordType == 'DD'" class="glyphicon glyphicon-ok"></span><span ng-if="vm.coordType != 'DD'" class="glyphicon glyphicon-ok" style="color: transparent;"></span><span data-i18n="common.dd" style="padding-left:20px;">DD</span></a></li>
+		<li role="separator" class="divider hgt-default-cursor"></li>
+		<li class="icon-link"  ng-class="{ 'disabled': !vm.okCopy() }">
+			<a
+			ng-click="vm.copyCoordinates( $event, false)"
+			clip-copy="vm.clipCopyCoordinates( false )"
+			tabindex="-1"><i class="glyphicon glyphicon-duplicate"></i> <span data-i18n="common.getLatLong">Copy Position</span></a>
+		</li>
+		<li class="icon-link" ng-if="vm.showLocation"  ng-class="{ 'disabled': !vm.okCopyLocation() }">
+			<a
+			ng-click="vm.copyCoordinates( $event, true)"
+			clip-copy="vm.clipCopyCoordinates( true )"
+			tabindex="-1"><i class="glyphicon glyphicon-duplicate"></i> <span data-i18n="common.getLatLongLocation">Copy Position &amp; Location Name</span></a>
+		</li>
+		<li class="icon-link" ng-if="!vm.readOnly" ng-class="{ 'disabled': !vm.okPaste() }">
+			<a
+			ng-click="vm.pasteCoordinates( $event, false )"
+			tabindex="-1"><i class="glyphicon glyphicon-paste"></i> <span data-i18n="common.pasteLatLong">Paste Position</span></a>
+		</li>
+		<li class="icon-link" ng-if="vm.showLocation && !vm.readOnly" ng-class="{ 'disabled': !vm.okPasteLocation() }">
+			<a
+			ng-click="vm.pasteCoordinates( $event, true )"
+			tabindex="-1"><i class="glyphicon glyphicon-paste"></i> <span data-i18n="common.pasteLatLongLocation">Paste Position &amp; Location Name</span></a>
+		</li>
+		<li class="icon-link" ng-if="vm.showOnMap" ng-class="{ 'disabled': !vm.okShowOnMap() }">
+			<a
+			ng-click="vm.onShowOnMap( )"
+			tabindex="-1"><i class="honeywell-icon honeywell-map-show"></i> <span data-i18n="common.showonmap">Show on Map</span></a>
+		</li>
+	</ul>
+</div>

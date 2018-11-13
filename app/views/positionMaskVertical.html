@@ -1,0 +1,48 @@
+<!-- Location Control -->
+<div class="form-group" ng-if="vm.showLocation">
+	<div class="row">
+		<label for="{{ vm.fieldName }}-location">{{ vm.locationLabel }}</label>
+		<div class="field-functions-menu-wrapper">
+			<input type="text" class="form-control"
+				id="{{ vm.fieldName }}-location"
+				name="{{ vm.fieldName }}-location"
+				triggersaveid="{{ saveFormName }}"
+				ng-model="vm.getSetLocation"
+				ng-model-options="{ updateOn: 'blur', getterSetter: 'true' }">
+		</div>
+	</div>
+</div>
+
+<!-- Position Control -->
+<div class="form-group">
+	<div class="row">
+		<label ng-if="vm.positionLabel != null">{{  vm.positionLabel }}</label>
+
+		<div class="field-functions-menu-wrapper">
+
+			<input class="form-control"  ng-if="vm.coordType == 'DMS'" coord-fmt="DMS"  ui-coordinate="latitude"
+				ng-model="vm.dmsLatitude" ng-model-options="{ updateOn: 'blur' }"
+				id="{{ vm.fieldName }}-latitude" name="{{ vm.fieldName }}-latitude" placeholder="{{  vm.latitudeLabel }}">
+			<input class="form-control"  ng-if="vm.coordType == 'DDM'" coord-fmt="DDM"  ui-coordinate="latitude"
+				ng-model="vm.ddmLatitude" ng-model-options="{ updateOn: 'blur' }"
+	 			id="{{ vm.fieldName }}-latitude" name="{{ vm.fieldName }}-latitude" placeholder="{{  vm.latitudeLabel }}">
+			<input class="form-control"  ng-if="vm.coordType == 'DD'" coord-fmt="DD"  ui-coordinate="latitude"
+				 ng-model="vm.ddLatitude" ng-model-options="{ updateOn: 'blur' }"
+				id="{{ vm.fieldName }}-latitude" name="{{ vm.fieldName }}-latitude" placeholder="{{  vm.latitudeLabel }}">
+
+			<div ng-if="!vm.dropdownTemplate" ng-include src="'assets/app/widgets/templates/positionControlDropdown.html'"></div>
+			<div ng-if="vm.dropdownTemplate" compile="vm.dropdownTemplate"></div>
+		</div>
+		<div class="field-functions-menu-wrapper" style="margin-top: 10px; padding-right: 28px;">
+			<input class="form-control"  ng-if="vm.coordType == 'DMS'" coord-fmt="DMS"  ui-coordinate="longitude"
+				ng-model="vm.dmsLongitude" ng-model-options="{ updateOn: 'blur' }"
+				id="{{ vm.fieldName }}-longitude" name="{{ vm.fieldName }}-longitude" placeholder="{{  vm.longitudeLabel }}">
+			<input class="form-control"  ng-if="vm.coordType == 'DDM'" coord-fmt="DDM"  ui-coordinate="longitude"
+				ng-model="vm.ddmLongitude" ng-model-options="{ updateOn: 'blur' }"
+				id="{{ vm.fieldName }}-longitude" name="{{ vm.fieldName }}-longitude" placeholder="{{  vm.longitudeLabel }}">
+			<input class="form-control"  ng-if="vm.coordType == 'DD'" coord-fmt="DD"  ui-coordinate="longitude"
+				ng-model="vm.ddLongitude" ng-model-options="{ updateOn: 'blur' }"
+				id="{{ vm.fieldName }}-longitude" name="{{ vm.fieldName }}-longitude" placeholder="{{  vm.longitudeLabel }}">
+		</div>
+	</div>
+</div>
