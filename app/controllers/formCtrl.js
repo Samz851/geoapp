@@ -9,7 +9,7 @@ angular.module('formController',[])
         direction: '',
         location: ''
     }
-
+    $scope.isCoor = false;
 
     $scope.isCoordinate = function(){
 
@@ -32,7 +32,7 @@ angular.module('formController',[])
         const regex = /([SNsn][\s]*)?((?:[\+-]?[0-9]*[\.,][0-9]+)|(?:[\+-]?[0-9]+))(?:(?:[^ms'′"″,\.\dNEWnew]?)|(?:[^ms'′"″,\.\dNEWnew]+((?:[\+-]?[0-9]*[\.,][0-9]+)|(?:[\+-]?[0-9]+))(?:(?:[^ds°"″,\.\dNEWnew]?)|(?:[^ds°"″,\.\dNEWnew]+((?:[\+-]?[0-9]*[\.,][0-9]+)|(?:[\+-]?[0-9]+))[^dm°'′,\.\dNEWnew]*))))([SNsn]?)[^\dSNsnEWew]+([EWew][\s]*)?((?:[\+-]?[0-9]*[\.,][0-9]+)|(?:[\+-]?[0-9]+))(?:(?:[^ms'′"″,\.\dNEWnew]?)|(?:[^ms'′"″,\.\dNEWnew]+((?:[\+-]?[0-9]*[\.,][0-9]+)|(?:[\+-]?[0-9]+))(?:(?:[^ds°"″,\.\dNEWnew]?)|(?:[^ds°"″,\.\dNEWnew]+((?:[\+-]?[0-9]*[\.,][0-9]+)|(?:[\+-]?[0-9]+))[^dm°'′,\.\dNEWnew]*))))([EWew]?)/;
         
         matches = $scope.firstInput.match(regex);
-        if (matches > 0) { return 'TRUE' } else { return 'FALSE'};
+        if (matches > 0) { $scope.isCoor = true } else { $scope.isCoor = false};
     }
 
 }])
