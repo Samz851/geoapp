@@ -6,18 +6,21 @@ describe("FormCtlr test suite", function() {
 
   beforeEach(inject(function(_$controller_){
     $controller = _$controller_;
-    var controller = $controller('formCtrl', {$scope : $scope});
+    
   }));
 
 
   describe("checks if input is coordinate", function(){
-    var $scope = {};
+    it('should return true on input type', function(){
+      var scope = {};
+      var controller = $controller('formCtrl', {$scope : scope});
 
-    
+      scope.firstInput = "N49° 59.94913'";
+  
+      scope.isCoordinate();
+      expect(scope.isCoor).toBe(true);
+    })
+    // var $scope = {};
 
-    $scope.firstInput = '-71.832005';
-
-    $scope.isCoordinate();
-    expect($scope.isCoor).toBe(false);
   });
 });
