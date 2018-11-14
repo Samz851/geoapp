@@ -11,17 +11,19 @@
         <script src="/js/angular.js"></script>
         <script src="/js/angular-ui-router.js"></script>
 
-
-    <!--Angularjs Controllers and Services-->
-        <script src="/controllers/formCtrl.js"></script>
     <!--Angularjs Routes and Config-->
         <script src="geoapp.js"></script>
         <script src="ngroutesui.js"></script>
+
+    <!--Angularjs Controllers and Services-->
+        <script src="/controllers/formCtrl.js"></script>
+
     </head>
     <body ng-app="geoapp">
         <header>Testing GeoAPP coordinates formats</header>
         <div><h3>To Do:</h3>
         <ul><li>Auto determine input format from first 3 characters</li></ul></div>
+        <a ui-sref="app">Click Me</a>
         <div ui-view="main"></div>
     <footer class="footer-bottom">
     </footer>

@@ -1,7 +1,7 @@
 <form class="form-inline" role="form">
     <div class="form-group">
       <label for="coordinate1">First coordinate:</label>
-      <input type="text" class="form-control" id="coor1" ng-model="formCtrl.coordinateInput" ng-blur="formCtrl.defineFormat(formCtrl.coordinateInput)">
+      <input type="text" class="form-control" id="coor1" ng-model="firstInput" ng-blur="isCoordinate()">
     </div>
         <div class="radio-inline disabled">
             <label><input type="radio" name="DDM">DDM</label>

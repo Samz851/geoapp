@@ -1,1 +1,1 @@
-var app = angular.module('geoapp', ['geoappRoutesUI', 'formCtrl'])
+var app = angular.module('geoapp', ['geoappRoutesUI', 'formController'])

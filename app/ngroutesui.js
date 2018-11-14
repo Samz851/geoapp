@@ -15,7 +15,7 @@ var app = angular.module('geoappRoutesUI', ['ui.router'])
 			views: {
 				"main": {
 					templateUrl: "views/mainForm.html",
-					// controller: 'CoordUtil',
+					controller: 'formCtrl',
 					// controllerAs: 'main',
 				}
 			},
